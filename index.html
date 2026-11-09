@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <style>
+:root{
+    --primary-dark:#4338ca;
+    --primary:#4f46e5;
+    --white:#ffffff;
+    --border:#e5e7eb;
+    --gray-light:#e6eaed;
+    --gray:#6b7280;
+    --dark:#111827;
+    --space-16:64px;
+    --space-12:48px;
+    --space-8:32px;
+    --space-6:24px;
+    --space-4:16px;
+    --space-3:12px;
+    --space-2:8px;
+    --space-1:4px;
+    --radius-full:999px;
+    --shadow-lg:0 20px 40px rgba(0,0,0,.12);
+    --shadow:0 8px 20px rgba(0,0,0,.08);
+    --shadow-sm:0 2px 6px rgba(0,0,0,.06);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body{
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+/* ============ Header bar ============ */
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    padding: var(--space-4) var(--space-8);
+    border-bottom: 1px solid var(--border);
+}
+/*this incloud both css for the logo and logo word to meke it beside each other */
+.logo-photo{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+/* this is the logo for this page */
+.logo-word{
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+}
+/* beside the name of page */
+
+.logo{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+/* my nave bar include 4 nav */
+.nav-links{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+}
+.nav{
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 18px;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+.nav:hover{ color: var(--primary); }
+/* hamburger (three lines) button — hidden on normal/wide screens */
+.menu-btn{
+    display: none;
+    border: none;
+    background: none;
+    color: var(--dark);
+    font-size: 28px;
+    cursor: pointer;
+}
+/*this is for make thge botton upper right and beside the nave*/
+.btn-wrap{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+/*this is only for the register botton */
+.register-btn{
+    border: none;
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 18px;
+    cursor: pointer;
+    padding: var(--space-3) var(--space-6);
+    box-shadow: 0 8px 20px rgba(79,70,229,.28);
+    transition: background-color .2s ease;
+}
+.register-btn:hover{ background-color: var(--primary-dark); }
+
+/* ============ Hero (home) ============ */
+/* this is for the all item in this home box like the left and the right item */
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-12);
+    padding: 40px var(--space-16) 72px var(--space-16);
+}
+/* this for the stat be in the same line */
+.media-1, .media-2 { display: contents; }   /* default: transparent -> desktop = one row */
+
+/* --- Right side: all the text --- */
+.hero-text{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* start = right in RTL -> everything aligns right, NO margin */
+    gap: 22px;
+    text-align: right;
+}
+/* badge pill: rocket first (on the right) */
+.right-top{
+    display: inline-flex; /*Displays an element as an inline-level flex container*/
+    align-items: center;
+    gap: var(--space-2);
+    background-color: #EEF2FF;
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+    font-size: 16px;
+    font-weight: 600;
+}
+/*the intoduction for the page the right paraghraph after roket*/
+.heading1{
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--dark);
+}
+.heading1 .accent{ color: var(--primary); }  /* the blue words */
+/*the small paraghraph after intouduction */
+.lead1{
+    color: var(--gray);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+/*for both bottom*/
+.hero-action{
+    display: flex;
+    gap: var(--space-4);
+}
+/* the blue bottom after paragraph*/
+.first-btn{
+    border: none;
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 18px;
+    cursor: pointer;
+    padding: var(--space-3) var(--space-6);
+    box-shadow: 0 8px 20px rgba(79,70,229,.28);
+    transition: background-color .2s ease;
+}
+.first-btn:hover{ background-color: var(--primary-dark); }
+/*the white bottom beside the blue one */
+.second-btn{
+    border: 1px solid var(--border);
+    color: var(--dark);
+    background-color: var(--white);
+    border-radius: var(--radius-full);
+    font-size: 18px;
+    cursor: pointer;
+    padding: var(--space-3) var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: background-color .2s ease;
+}
+.second-btn:hover{ background-color: var(--gray-light); }
+/*this include the avatar and the hero trust*/
+.hero-compo{
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+/* the number for student*/
+.hero-trust{
+    color: var(--gray);
+    font-size: 15px;
+    font-weight: 500;
+}
+/* the three avatar in the right page after hero text*/
+.avatar{
+    display:flex;
+    gap: var(--space-1);
+    font-size: 22px;
+
+}
+.avatar1,.avatar2,.avatar3{
+
+   background-color: #EEF2FF ;
+   width: 38px;
+   height: 38px;
+   border: 2px;
+    border-radius: 50px;
+    object-fit: contain;
+    
+    
+  
+}
+
+
+/* --- Left side: the card --- */
+.hero-art{
+    position: relative;         /* anchor for the floating badges */
+    background: rgb(245, 243, 243);   /* the light-gray frame panel */
+    border-radius: 40px;
+    padding: 44px;              /* frame thickness around the purple card */
+    box-shadow: var(--shadow-lg);
+}
+/*the photo for graduation*/
+.hero-emoji{
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 28px;        /* rounded purple card */
+    display: block;/*Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width*/
+}
+/* floating white pills — emoji first (on the right) */
+.float-badge,
+.float-badge1{
+    position: absolute;/*The element is positioned relative to its first positioned (not static) ancestor element*/
+    display: inline-flex; /*Displays an element as an inline-level flex container*/
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--white);
+    color: var(--dark);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.float-badge1{ top: 24px; right: -10px; }   /* 4.9 تقييم — top, over the card */
+.float-badge{  bottom: 30px; left: -20px; }  /* 24 كورس — bottom-left, poking out */
+/*this for the bar cotain all statistics and sm line under*/
+.stat{
+    padding-top: 20px;
+    display: flex;
+justify-content: space-evenly;
+flex-direction: row-reverse;
+
+}
+
+/*the statistic with big bold blue*/
+.cal1,.cal2,.cal3,.cal4{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--primary);
+    font-size: xx-large;
+    font-weight: 600;
+   
+}
+/* this for the small text under statistic*/
+.sm-line{
+    display: flex;
+    justify-content: center;
+     color: #111827;
+     font-size: small;
+     font-weight: 600;
+
+}
+.section-head{
+    justify-items: center;
+    padding-top: 20px;
+}
+/*this only for a small word الكورسات*/
+.eyebrow{
+
+    background-color:#EEF2FF;
+    color: var(--primary);
+    padding-bottom: 20px;
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+    font-size: 16px;
+    font-weight: 600;
+
+}
+/*this for big font sentence after الكورسات */
+.big-title{
+    font-size: x-large;
+    font-weight:  900;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*the line with arabic comment after big title*/
+.sm-title{
+    font-size: 16px;
+    font-weight: 400;
+    color: #6b7280;
+    width: 1140;
+height: 930.15625;
+top: 96px;
+left: 382.5px;
+opacity: 1;
+
+
+}
+/*the container for all first 3 card*/
+.container1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns -> equal-size cards, same row */
+    gap: 24px;
+    padding-top: 35px;
+    padding-inline: var(--space-16);
+}
+/*this is for the cards*/
+.card1,.card2,.card3,.card4,.card5,.card6{
+
+    box-sizing: border-box;
+    padding: 20px;
+    border: solid  #cfd2d9;
+border-radius: 24px;
+border-width: 1px;
+
+}
+.container2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns -> equal-size cards, same row */
+    gap: 24px;
+    padding-top: 35px;
+    padding-inline: var(--space-16);
+}
+
+
+
+/*this is for laptop logo at the first card from the right*/
+.card-logo{
+
+    display: inline-block; /*box fits the icon not the full width*/
+    padding: 6px 10px;
+    background-color: #EEF2FF;
+    border-radius: 8px;
+    border: 1px ;
+
+}
+/*this the first text at the first card*/
+.card-text{
+    padding-top: 15px;
+    text-align: right;
+    padding-right: 5px;
+    text-align: left;
+
+}
+/*this is for all pharaghraph*/
+.card-content{
+    
+    text-align: left;
+    font-weight: 400;
+    font-size: 15px;
+    color: #6b7280;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+  
+
+}
+/*this is for the both price and the tag under the paraghraph*/
+.cardfoot{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 15px;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    
+}
+/*only for the price at the left*/
+.price{
+    color: var(--primary);
+    
+}
+/*only for the week tag*/
+.card-tag{
+        color: #6b7280;
+        background-color:#F9FAFB;
+        padding: 8px 16px;
+        border-radius: var(--radius-full);
+        font-size: 14px;
+        font-weight: 700;
+
+}
+/*for details bottom*/
+.card-btn{
+    border: 1px solid var(--border);
+    color: var(--dark);
+    background-color: var(--white);
+    border-radius: var(--radius-full);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: background-color .2s ease;
+    width: 100%;
+
+}
+/*the container for all first 3 card in the bottom */
+.container-2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns -> equal-size cards, same row */
+    gap: 24px;
+    padding-top: 35px;
+    padding-inline: var(--space-16);
+    padding-bottom: 150px;
+}
+/*this is for the cards in the bottom */
+.card-2{
+
+    box-sizing: border-box;
+    padding: 20px;
+    border: solid  #cfd2d9;
+border-radius: 24px;
+border-width: 1px;
+
+}
+
+
+/*this is for all logo at the  cards at the bottom */
+.card-logo-2{
+
+    display: inline-block; /*box fits the icon not the full width*/
+    
+    position: relative;
+    right: 50%;
+    padding: 6px 10px;
+    background-color: #EEF2FF;
+    border-radius: 8px;
+    border: 1px ;
+
+}
+/*this the first text at the all cards at the bottom*/
+.card-text-2{
+    padding-top: 15px;
+    text-align: center;
+    padding-right: 5px;
+
+}
+/*this is for all pharaghraph for all cards at the bottom */
+.card-content-2{
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    color: #6b7280;
+    padding-bottom: 10px;
+  
+
+}
+/* wrapper centers the bordered box horizontally — no margin */
+.cta-wrap{
+    display: flex;
+    justify-content: center;
+    padding: 40px var(--space-16);
+}
+/* this is the purble box*/
+.container-3{
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 24px;
+    padding: 50px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    border: none;
+    background:
+        radial-gradient(circle at top left,     rgba(255, 255, 255, 0.28), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,.28), transparent 25%),
+        linear-gradient(135deg, var(--primary), #7c3aed);
+}
+
+
+/*the small content for the last img before footer*/
+.sm-title-3{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: small;
+    font-weight: 300px;
+
+}
+/* this is for the regiter bottom for the last box befor fotter*/
+.register-2{
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background-color: white;
+    color:var(--primary-dark);
+    cursor: pointer;
+    font-size: 18px;
+    padding: var(--space-3) var(--space-6);
+    box-shadow: 0 8px 20px rgba(79,70,229,.28);
+    transition: background-color .2s ease;
+}
+/* this is call us bottom for the same box*/
+.call-us{
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    color: white;
+    background-color: var(--primary);
+    cursor: pointer;
+    font-size: 18px;
+    padding: var(--space-3) var(--space-6);
+    box-shadow: 0 8px 20px rgba(79,70,229,.28);
+    transition: background-color .2s ease;
+
+}
+/* this is for the all home footer */
+.footer-brand{
+    display: flex;
+    background-color: #111827;
+    justify-content: space-around;
+    border-bottom: 0.5px solid rgb(187, 182, 182) ;
+
+}
+/*this is for the 4 container footer */
+.footer-content,.footer-content1,.footer-content2,.footer-content3{
+    box-sizing: border-box;
+   
+        width: 20%;
+padding-top: 15px;
+
+
+}
+/* for the first container right first one */
+.p-text{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+padding-bottom: 15px;    
+
+
+}
+/*at this first container have one word masar*/
+.bottom-text{
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    padding-bottom: 15px;
+
+}
+/*and this logo for masar logo*/
+.bottom-logo{
+width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+/*this is for the rest content for the first container*/
+.p-content{
+    color: var(--gray);
+    font-size: small;
+    font-weight: 400;
+    padding-top: 15px;
+}
+/*this is for the second container*/
+.footer-content1{
+    color: white;
+    padding-bottom: 15px;
+}
+/*for the second container have first word*/
+.f-text1{
+    font-size: medium;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+/*the all rest content for the second container*/
+.f-text2,.f-text2,.f-text3,.f-text4,.f-text5{
+    color: var(--gray);
+    opacity: 1;
+    font-size: small;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+/*this is for the third container*/
+.f-c-text1{
+
+     font-size: large;
+    font-weight: 700;
+    color: white;
+        padding-bottom: 15px;
+
+
+}
+/*this is for all content for the third container*/
+.f-c-text2,.f-c-text3,.f-c-text4,.f-c-text5{
+     color: var(--gray);
+    opacity: 1;
+    font-size: small;
+    font-weight: 400;
+        padding-bottom: 15px;
+
+
+}
+/*this is for the forth container*/
+
+.f-c2-text1{
+    font-size: large;
+    font-weight: 700;
+    color: white;
+        padding-bottom: 15px;
+
+}
+/*this is for all content for the forth container*/
+
+.f-c2-text2,.f-c2-text3,.f-c2-text4{
+    color: var(--gray);
+    opacity: 1;
+    font-size: small;
+    font-weight: 400;
+        padding-bottom: 15px;
+
+
+}
+.footer-bottom{
+     display: flex;
+    background-color: #111827;
+    color: var(--gray);
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== small screen (width about 403px and below) =====
+   hide the nav links and show the hamburger (three lines) instead */
+@media (max-width: 400px){
+    .nav-links{ display: none; }
+    .menu-btn{ display: inline-flex; }
+    .logo-photo{ order: -1;}
+    .home{flex-direction: column;    }
+    .stat{display: grid ;   width: 95vw;       
+    background: rgb(245, 243, 243);   /* the light-gray frame panel */
+    border-radius: 35px;
+    padding: 30px;              /* frame thickness around the purple card */
+    box-shadow: var(--shadow-lg);
+             justify-content: center;}
+    .media-1{display: flex;justify-content: space-between;width: 350px;}
+    .media-2{display: flex; justify-content: space-between; width: 350px;}
+
+    .heading1{ font-size: 20px; }          /* small enough to fit on one line */
+.heading1 br{ display: none; }         /* removes the <br> after وابدأ, small screens only */
+.heading1 .accent-2{ display: block; } /* النهاردة goes to a new line */
+.home{ padding-inline: 16px; }         /* gives the heading more width */
+.lead1{font-size: 12px; }
+.lead1 br{display: none;}
+.lead1 .accent3{display: block;}
+
+
+    
+   .card1,.card2,.card3,.card4,.card5,.card6{ grid-column: 1 / -1; }
+   .card-2{grid-column: 1/-1;}
+
+.sm-title-3{ font-size: 12px; padding-inline: 0; white-space: nowrap; } /* keeps the text on one line */
+.cta-wrap{ padding-inline: 16px; }      /* less space around the box */
+.container-2{padding-bottom: 10px;}
+.container-3{ padding-inline: 16px; padding-top: 10px;}   /* less space inside the box */
+.first2{ display: flex; align-items: center; gap: 12px; }  /* تواصل and the phone on one line */
+.f-c2-text1,.f-c2-text2{ white-space: nowrap; }            /* stops each one breaking inside */
+
+
+.footer-brand{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-inline: 16px; }
+.footer-content,.footer-content1,.footer-content2,.footer-content3{ width: 100%; }
+
+}
+
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="btn-wrap">
+            <button class="register-btn">سجل الآن</button>
+        </div>
+
+        <nav class="nav-links">
+            <a class="nav" href="#">الرئيسية</a>
+            <a class="nav" href="#">الكورسات</a>
+            <a class="nav" href="#">ليه مسار</a>
+            <a class="nav" href="#">تواصل</a>
+        </nav>
+
+        <button class="menu-btn">☰</button>
+
+        <div class="logo-photo">
+            <div class="logo-word">
+                <img class="logo" src="logo/323e327ab193bee1995f0d99deaeaa75a6822362.png" alt="logo">
+                مسار
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="hero-text">
+            <h3 class="right-top"><span>🚀</span> التسجيل مفتوح للترم الجديد</h3>
+            <h1 class="heading1">اتعلم مهارة جديدة <span class="accent">وابدأ</span> <br> <span class="accent">رحلتك</span> من <span class="accent-2"> النهاردة </span></h1>
+            <h4 class="lead1">مركز مسار بيقدّم كورسات عملية في البرمجة والتصميم والتسويق <br>  واللغات ،<span class="accent3"></span> بمدرّبين خبراء وشهادات معتمدة بعد كل كورس</span>.</h4>
+            <div class="hero-action">
+                <button class="first-btn">تصفّح الكورسات</button>
+                <button class="second-btn">اعرف أكتر</button>
+            </div>
+            <div class="hero-compo">
+                
+                <div class="avatar">
+                    <span class="avatar1">👨</span>
+                    <span class="avatar2">🧑</span>
+                    <span class="avatar3">👩</span>
+                </div>
+                <div class="hero-trust">+1200 طالب بدأوا معانا</div>
+            </div>
+        </div>
+
+        <div class="hero-art">
+            <p class="float-badge1"><span>⭐</span> 4.9 تقييم</p>
+            <p class="float-badge"><span>🎯</span> 24 كورس</p>
+            <img class="hero-emoji" src="logo/grad.png" alt="graduation">
+        </div>
+    </section>
+    <section class="stat">
+        <div class="media-1">
+        <div class="cal1">1200+
+         <span class="sm-line">طالب مسجّل</span>
+        </div>
+        <div class="cal2">
+            24 <span class="sm-line">كورس متاح</span>
+        </div>
+        </div>
+        <div class="media-2">
+        <div class="cal3">18
+            <span class="sm-line">مدرّب خبير</span>
+        </div>
+        <div class="cal4">96%
+            <span class="sm-line">نسبة الرضا</span>
+        </div>
+        </div>
+    </section>
+    <section class="section-head">
+        <div class="eyebrow"> الكورسات</div>
+        <h1 class="big-title"> اختار المجال اللي يناسبك</h1>
+        <p class="sm-title">كورسات عملية 100% بمشاريع حقيقية وشهادة معتمدة في نهاية كل كورس.</p>
+    </section>
+    <section class="courses">
+        <div class="container1">
+        <div class="card1">
+            <div class="card-logo">💻</div>
+           <h3 class="card-text"> تطوير الويب </h3>
+           
+            <p class="card-content">اتعلم HTML و CSS و JavaScript وابني مواقع<br>  كاملة من الصفر.</p>
+
+            <div class="cardfoot"><p class="price">1200 ج</p>
+                <p class="card-tag"> ⏱ 12 أسبوع</p>
+                </div>
+                <button class="card-btn"> التفاصيل</button>
+                 
+        </div>
+        <div class="card2">
+            <div class="card-logo">🎨</div>
+           <h3 class="card-text"> تصميم UI / UX  </h3>
+           
+            <p class="card-content">من أول الـ Wireframe لحد الـ  Prototype  باستخدام <br>  Figma.  </p>
+
+            <div class="cardfoot"><p class="price">900 ج</p>
+                <p class="card-tag"> ⏱ 8 أسابيع</p>
+                </div>
+                <button class="card-btn"> التفاصيل</button>
+                 
+        </div>
+        <div class="card3">
+             <div class="card-logo">📈</div>
+           <h3 class="card-text"> التسويق الرقمي  </h3>
+           
+            <p class="card-content">استراتيجيات السوشيال ميديا والإعلانات الممولة <br> والـ SEO.</p>
+
+            <div class="cardfoot"><p class="price">1000 ج</p>
+                <p class="card-tag"> ⏱ 10 أسابيع</p>
+                </div>
+                <button class="card-btn"> التفاصيل</button>
+        </div>
+        </div>
+        <div class="container2">
+        
+            <div class="card4">
+             <div class="card-logo">🗣️</div>
+           <h3 class="card-text"> اللغة الإنجليزية </h3>
+           
+            <p class="card-content">محادثة وقواعد من المستوى المبتدئ لحد <br> المتقدم مع مدرّب أجنبي.</p>
+
+            <div class="cardfoot"><p class="price">800 ج</p>
+                <p class="card-tag"> ⏱ 16 أسبوع</p>
+                </div>
+                <button class="card-btn"> التفاصيل</button>
+        </div>
+        
+            <div class="card5">
+             <div class="card-logo">📊</div>
+           <h3 class="card-text"> تحليل البيانات </h3>
+           
+            <p class="card-content"> Excel و SQL و Python لتحليل البيانات وبناء التقارير.</p>
+
+            <div class="cardfoot"><p class="price">1500 ج</p>
+                <p class="card-tag"> ⏱ 14 أسبوع</p>
+                </div>
+                <button class="card-btn"> التفاصيل</button>
+        </div>
+            <div class="card6">
+             <div class="card-logo">📱</div>
+           <h3 class="card-text"> تطبيقات الموبايل </h3>
+           
+            <p class="card-content">ابني تطبيق كامل بـ Flutter و اشتغل على <br> iOS و Android.</p>
+
+            <div class="cardfoot"><p class="price">1400 ج</p>
+                <p class="card-tag"> ⏱ 12 أسبوع</p>
+                </div>
+                <button class="card-btn"> التفاصيل</button>
+        </div>
+        </div>
+
+    </section>
+    <section class="section-head">
+        <div class="eyebrow"> ليه مسار</div>
+        <h1 class="big-title"> إيه اللي بيميّز مسار؟</h1>
+        <p class="sm-title">بنركّز على التطبيق العملي مش بس النظري.</p>
+    </section>
+    <section>
+
+    </section>
+    <div class="container-2">
+        <div class="card-2">
+            <div class="card-logo-2">🎯</div>
+           <h3 class="card-text-2"> محتوى عملي</h3>
+           
+            <p class="card-content-2">مشاريع حقيقية من أول أسبوع وبورتفوليو جاهز <br> في الآخر. </p>
+
+                 
+        </div>
+          <div class="card-2">
+            <div class="card-logo-2">👨‍🏫</div>
+           <h3 class="card-text-2">  مدرّبين خبراء </h3>
+           
+            <p class="card-content-2">كل مدرّب عنده خبرة سنوات في السوق مش بس <br> في التدريس. </p>
+
+                 
+        </div>
+          <div class="card-2">
+            <div class="card-logo-2">📜</div>
+           <h3 class="card-text-2"> شهادة معتمدة</h3>
+           
+            <p class="card-content-2"> شهادة معتمدة بتساعدك في سيرتك الذاتية <br> وتقديمك للشغل.</p>
+
+                 
+        </div>
+    </div>
+    <div class="cta-wrap">
+        <div class="container-3">
+                <h1 class="big-title-3"> جاهز تبدأ رحلتك؟</h1>
+                 <p class="sm-title-3">احجز مكانك في الترم الجديد — الأماكن محدودة.</p>
+                 <button class="register-2">سجّل الآن مجانًا</button>
+                 <button class="call-us">اتصل بينا</button>
+
+
+
+        </div>
+    </div>
+    <section class="footer">
+        <div class="footer-brand">
+            <div class="footer-content">
+            <div class="p-text">
+                <img class="bottom-logo" src="logo/323e327ab193bee1995f0d99deaeaa75a6822362.png" alt="logo">
+                <p class="bottom-text">مسار</p>
+
+    
+            </div>
+            <div class="p-content">مركز تعليمي بيقدّم كورسات عملية <br> في مجالات مختلفة، هدفنا إنك تتعلم حاجة تفيدك في شغلك.</div>
+            </div>
+
+            <div class="footer-content1">
+                <h3 class="f-text1" > الكورسات</h3>  
+                <div class="f-text2">تطوير الويب</div>
+                <div class="f-text3">تصميم UI/UX</div>
+                <div class="f-text4">التسويق الرقمي</div>
+                <div class="f-text5">تحليل البيانات</div>
+
+            </div>
+            <div class="footer-content2">
+                <h3 class="f-c-text1">المركز</h3>
+                <div class="f-c-text2">عن مسار</div>
+                 <div class="f-c-text3">المدرّبين</div>
+                <div class="f-c-text4">الأسئلة الشائعة</div>
+                <div class="f-c-text5">الوظائف</div>
+                
+            </div>
+            <div class="footer-content3">
+            
+                <h3 class="f-c2-text1">تواصل</h3>
+                <div class="f-c2-text2">📞 0100 000 0000</div>
+                <div class="f-c2-text3">✉️ hello@masar.tst</div>
+                <div class="f-c2-text4">📍 القاهرة، مصر</div>
+            </div>
+           
+        </div>
+         <div class="footer-bottom">
+                © 2025 مركز مسار. جميع الحقوق محفوظة.
+            </div>
+
+    </section>
+</body>
+</html>
